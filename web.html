@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Programming</title>  
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  
+  <link rel="stylesheet" href="./style.css">
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Loader Screen -->
+  <script>
+    $(window).on("load", function(){
+      console.log("Window loaded");
+      $(".loader-wrapper").fadeOut("slow", function() {
+        console.log("Loader hidden");
+      });
+    });
+  </script>
+
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <!-- Full Page Image Header with Vertically Centered Content -->
+    <header class="masthead" style="background-image: url(./asset/Hweb.jpg);">
+      <div class="container h-50">
+        <div class="row h-50 align-items-center">
+          <div class="col-12 text-center">
+            <h1 class="fw-light">「Web Programming: AnimeXhibition」</h1>
+            <p class="lead">
+              A website built for Multimedia Web Programing Mini Project; Digital Communities - RIA (Rich Internet Application) 
+              online platform that brings together people with shared interests. The project implements JQuery, AJAX and Jikan.moe API.<br><br>
+            </p>
+            <a class="btn btn-white" href="https://nhanz01.github.io/AnimeXhibition/"><i class="fas fa-link" style="padding-right: 15px;"></i>Live Website</a>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </header>
+
+   <!-- About Project -->
+   <div class="container">
+    <h2 class="fw-light" style="text-align: center; margin-top: 50px;">About Project</h2><br>
+    <div class="container" style="height: 200px; text-align: center;">
+      <img src="./asset/AnimeXhibition.png">
+    </div>
+    <p style="text-align: justify; margin: 5px;">
+      ArtXhibition is an online RIA (Rich Internet Application) platform that introduces Anime and Art to the communities.
+      Through the website, Anime lovers can gather to check out the latest Anime recommendations, find out details on Anime 
+      characters, try guessing the Anime characters, and check out the posters related to Anime. It also aimed to help 
+      newbies to discover about anime, including where to find anime events, cosplay stores and other recommended sites.
+      <br><br>
+      AnimeXhibition integrates <a href="https://jikan.moe/">Jikan.moe</a> API that utiilizes MyAnimeList (MAL), a well-known anime website's database
+      to display the data. The site was built by four groupmates, including myself, using Tooplate template and hosted on <a href="https://github.com/NHanz01/AnimeXhibition">GitHub</a> for convenient version control.  
+      <br><br>
+      <b>[ My Roles ] </b><br><br>
+      Throughout the project, I contributed in:
+      <ul>
+        <br>
+        <li>
+            <b>Initial project setup on GitHub:</b>
+            <br>
+            <ul>
+              <li>Setup the project repository.</li>
+              <li>Research on how to host a website on GitHub and its limitations.</li>
+              <li>Guide my teammates on GitHub features.</li>
+              <li>Re-program the Tooplate template to fit the project's scope.</li>
+              <li>Reconstruct the navigation bar to assist better workflow between the team.</li>
+              <li>Research on the available open API to integrates in the website and shares with teammates.</li>
+            </ul> 
+        </li>
+        <br>   
+        <br>
+        <li>
+            <b>Landing Page/Homepage:</b>
+            <br><br>
+            <div id="bContainer" style="margin: 0; padding:0;">
+              <img src="./asset/web-home.png" height="100%">
+            </div>     
+            <br>
+            <ul>
+              <li>Design and program the homepage contents.</li>
+              <li>Introduces Anime, ACG, and three main ACG event organizers in Malaysia.</li>
+            </ul> 
+        </li>
+        <br>
+        <br>
+        <li>
+            <b>Anime Character Page:</b>
+            <br><br>
+            <div id="bContainer" style="margin: 0; padding:0;">
+              <img src="./asset/web-char.jpeg" height="100%">
+            </div> 
+            <br>
+            <ul>
+              <li>Integrates Jikan.moe API to display the anime characters from MAL database. </li>
+              <li>Code search bar with AJAX to allow user to search anime character.</li>
+              <li>Code a function to show the anime character details once user click on a character.</li>
+            </ul> 
+        </li>       
+      </ul>
+    </p>
+  </div>
+    
+    <div id="footer-container"></div>
+
+    <div class="loader-wrapper">
+      <div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="shade"></div>
+        <div class="shade"></div>
+        <div class="shade"></div>
+        <span>Loading</span>
+      </div>
+    </div> 
+        
+    <!-- Load Header -->
+    <script>
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+        });
+    </script>
+
+    <!-- Load Footer -->
+    <script>
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer-container').innerHTML = data;
+        });
+    </script>
+</body>
+</html>

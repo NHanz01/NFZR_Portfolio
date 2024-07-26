@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NFZR Portfolio</title>  
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  
+  <link rel="stylesheet" href="./style.css">
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Loader Screen -->
+  <script>
+    $(window).on("load", function(){
+      console.log("Window loaded");
+      $(".loader-wrapper").fadeOut("slow", function() {
+        console.log("Loader hidden");
+      });
+    });
+  </script>
+
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <!-- Full Page Image Header with Vertically Centered Content -->
+    <header class="masthead" style="background-image: url(./asset/Habout.png);">
+      <div class="container h-100">
+        <div class="row h-100 align-items-center">
+          <div class="col-12 text-center">
+            <h1 class="fw-light">「Hi, I'm Nurul Farhana Binti Zainal Rashid」</h1>
+            <p class="lead">
+              Currently a third-year student, Bachelor in Computer Science (Graphics and Multimedia Software) 
+              With Honours at Universiti Teknologi Malaysia (UTM), Johor, Malaysia. <br><br>
+              <b>~ Welcome to My Portfolio ~</b>
+            </p>
+            <div style="text-align: center;">
+              <img src="./asset/me.jpg" id="circle">
+            </div> 
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <!-- About Me -->
+      <div class="container">
+        <h2 class="fw-light" style="text-align: center; margin-top: 90px;">About Me</h2><br>
+        <p style="text-align: justify; margin: 5px;">
+          My name is Nurul Farhana Binti Zainal Rashid, and usually known as Hana. I was born in Kuala Lumpur and currently living 
+          with my family in Putra Permai City, located between Seri Kembangan and Puchong, Selangor D.E. Being the fourth born out 
+          of six siblings, I grew up in a lively and warm family. I would describe myself as <b>determined, witty, and eager to learn 
+          more</b>. My MBTI is INFJ. I have a diploma in Computer Science (Multimedia) and currently pursuing Bachelor in Computer 
+          Science (Graphics and Multimedia Software) With Honours at Universiti Teknologi Malaysia (UTM), Johor, Malaysia. 
+          <br><br>
+          I'm still exploring the opportunities the computer science field offers since it's a vast area. Currently, my main interests
+          are UI/UX design and game development. However, I'm open to any position as I'm interested in gaining more knowledge and 
+          real-life working experience in computer science. I may be a rookie, but I'm eager to learn everything I can from my seniors.
+          I have faith in both my perseverance and capability to adapt. Besides, I was known among my peers as the compassionated friend with the keenest eyes for details!
+          <br><br>
+          <b>[ Past Experience ] </b><br><br>
+        </p>
+        <div class="container" style="text-align: center; width: 100%;">
+          <ul style="display: inline-flex; list-style: none; padding: 20px 0;">
+            <li>
+              <a href="https://ofo.my/">
+                <img src="./asset/ofo-black.png" style="width: 380px;">
+              </a>
+            </li>
+            <li style="margin: 0 25px;">
+              <a href="https://preferredlogistics.co/">
+                <img src="./asset/preferred.png" style="width: 350px;">
+              </a>
+            </li>
+            <li style="margin: 0 25px;">
+              <a href="https://www.utm.my/">
+                <img src="./asset/utm.png" style="width: 250px;">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <p style="text-align: justify; margin: 5px;">  
+          Speaking about my past working experiences, during diploma, I've been doing a four-month internship at OFO Tech Sdn Bhd as a 
+          <b>UI/UX Designer Intern</b>. Throughout the industrial training, my primary tasks consisted of designing user interfaces (UI) and icons for 
+          various usage in the systems developed by OFO Tech using Adobe XD and Adobe Illustrator. Other than that, I assist in 
+          Artificial Intelligence (AI) development by labelling raw images using LabelImg by Pypi.org. To make use of my free time 
+          during the internship, I would sometimes study the concepts of User Experience (UX) for better UI designations and explore 
+          Figma for future UI/UX projects usage. <br><br>
+
+          Other than that, I've worked as <b>logistics data entry assistant</b> at Preferred Logistics Solutions Sdn Bhd during my semester 
+          break. My tasks consists updating the system daily, checking the daily delivery route, keeping track of the parcels, helping 
+          with packaging and assist the senior workers with manifest documentation. <br><br>
+
+          Finally, I've also worked as a <b>freelance video editor</b> under UTM BPAT in project with CIBD MYCREST. I am able to use 
+          editing software such as Sony Vegas Pro and Adobe After Effect.<br><br>
+        </p>
+      </div>
+
+    <div id="footer-container"></div>
+
+    <div class="loader-wrapper">
+      <div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="shade"></div>
+        <div class="shade"></div>
+        <div class="shade"></div>
+        <span>Loading</span>
+      </div>
+    </div>
+
+    <div class="loader-wrapper">
+      <div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="shade"></div>
+        <div class="shade"></div>
+        <div class="shade"></div>
+        <span>Loading</span>
+      </div>
+    </div> 
+
+    <!-- Load Header -->
+    <script>
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+        });
+    </script>
+
+    <!-- Load Footer -->
+    <script>
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer-container').innerHTML = data;
+        });
+    </script>
+</body>
+</html>

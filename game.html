@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Design</title>  
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  
+  <link rel="stylesheet" href="./style.css">
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Loader Screen -->
+  <script>
+    $(window).on("load", function(){
+      console.log("Window loaded");
+      $(".loader-wrapper").fadeOut("slow", function() {
+        console.log("Loader hidden");
+      });
+    });
+  </script>
+
+</head>
+<body>
+    <div id="header-container"></div>
+<!-- Full Page Image Header with Vertically Centered Content -->
+    <header class="masthead" style="background-image: url(./asset/Hgame.png);">
+      <div class="container h-50">
+        <div class="row h-50 align-items-center">
+          <div class="col-12 text-center">
+            <h1 class="fw-light">「Game Design」</h1>
+            <p class="lead">
+              Games that I have designed and developed using various approaches.<br><br>
+            <a class="btn btn-white" href="#nazomeita" style="margin-right: 50px;"><i class="fa fa-gamepad" style="padding-right: 15px;"></i>Nazomeita</a>
+            <a class="btn btn-white" href="#notExpedea"><i class="fa fa-gamepad" style="padding-right: 15px;"></i>Not Expedea</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+ 
+    <!-- Nazomeita -->
+    <div class="container" id="nazomeita">  
+      <h2 class="fw-light" style="text-align: center; margin-top: 50px;"> <b>「謎めいた</b>(Nazomeita)」</h2><br>
+      <p style="text-align: justify; margin: 15px;">
+        謎めいた or translated as "Enigmatic" is a visual novel game created solely by me using <a href="https://scratch.mit.edu/">Scratch</a> back in Diploma for subject 
+        Basic Animation In Multimedia. The game starts with player wake up and find themselves trapped in a game. There are three 
+        mini games player needs to complete to return to reality. The first game requires interaction with 'W A S D' keys on keyboard 
+        to move, second game is a mouse clicking game and the final game requires player's device camera as it uses motion sensor.
+      </p>
+      <br><br>
+      <div class=row>
+        <div class="col-md-6">
+          <h4><b>[ Live Game ] </b></h4><br>
+          <iframe src="https://scratch.mit.edu/projects/1035884852/embed" allowtransparency="true" width="100%" height="450px" frameborder="0" 
+          scrolling="no" allowfullscreen></iframe>
+        </div>
+        <div class="col-md-6">
+          <h4><b>[ Gameplay Demo ] </b></h4><br>
+          <iframe width="100%" height="450px" src="https://www.youtube.com/embed/YoA871ylZW8?si=-rc58M2aR0vIURs6" 
+          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+  <!-- Not Expedea -->
+  <div class="container" id="notExpedea">
+    <h2 class="fw-light" style="text-align: center; margin-top: 100px;">「Not Expedea」</h2><br>
+    <p style="text-align: justify; margin: 5px;">
+      Not Expedea is a simple <a href="https://www.spatial.io/">Spatial.io</a> game developed using Unity engine, to demonstrates multiplayer game, for subject Real-Time Computer Graphics (SECV3123). 
+      The assets used in the game are free models, mostly taken from sketchfab, in .fbx type.
+      <br><br>
+
+      <h4><b>[ Live Game ] </b></h4><br>
+      <iframe src="https://www.spatial.io/embed/Not-Expedea-666073a50af4584d184c9254?share=1028141048578702308" width="100%" 
+      height="720px" allow="camera; fullscreen; autoplay; display-capture; microphone; clipboard-write"></iframe><br><br><br>
+      
+      <h4><b>[ Gameplay Demo ] </b></h4><br>
+      <iframe width="100%" height="500px" src="https://www.youtube.com/embed/G_9AlN7DNls?si=4RAuAmRVM9djIEyV" 
+      frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br><br>
+      </p>
+  </div>
+  
+    <div id="footer-container"></div>
+
+    <div class="loader-wrapper">
+      <div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="shade"></div>
+        <div class="shade"></div>
+        <div class="shade"></div>
+        <span>Loading</span>
+      </div>
+    </div>     
+
+    <!-- Load Header -->
+    <script>
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+        });
+    </script>
+
+    <!-- Load Footer -->
+    <script>
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer-container').innerHTML = data;
+        });
+    </script>
+</body>
+</html>

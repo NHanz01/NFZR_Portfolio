@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RTCG</title>  
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  
+  <link rel="stylesheet" href="./style.css">
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Loader Screen -->
+  <script>
+    $(window).on("load", function(){
+      console.log("Window loaded");
+      $(".loader-wrapper").fadeOut("slow", function() {
+        console.log("Loader hidden");
+      });
+    });
+  </script>
+
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <!-- Full Page Image Header with Vertically Centered Content -->
+    <header class="masthead" style="background-image: url(./asset/Hrtcg.png);">
+      <div class="container h-50">
+        <div class="row h-50 align-items-center">
+          <div class="col-12 text-center">
+            <h1 class="fw-light">「Real-Time Computer Graphics」</h1>
+            <p class="lead">
+              Compilation of assignments completed during the Real-Time Computer Graphics subject, consisting:
+              <br><br>
+              <a class="btn btn-white" href="#webVR" style="margin-right: 10px;"><i class="fas fa-angle-double-down" style="padding-right: 15px;"></i>WebVR</a>
+              <a class="btn btn-white" href="#hologram" style="margin-right: 10px;"><i class="fas fa-angle-double-down" style="padding-right: 15px;"></i>Hologram</a>
+              <a class="btn btn-white" href="#AR" style="margin-right: 10px;"><i class="fas fa-angle-double-down" style="padding-right: 15px;"></i>Marker AR</a>
+            </p>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </header>
+
+   <!-- WebVR -->
+   <div class="container" id="webVR">
+    <h2 class="fw-light" style="text-align: center; margin-top: 50px;">WebVR using Glitch.com</h2><br>
+    <p style="text-align: justify; margin: 5px;">
+      This assignment requires me to develop a simple WebVR application using A-Frame and it was developed using glitch.com.
+      The character is animated using Mixamo and user can click on the objects to interact.
+      <br><br>
+      <iframe src="https://rtcg01-ass1-nurul-farhana.glitch.me" width="100%" height="500px"></iframe>
+    </p>
+    <br>
+  </div>
+
+  <!-- WebVR -->
+  <div class="container" id="hologram">
+    <h2 class="fw-light" style="text-align: center; margin-top: 50px; width: 100%;">Hologram MagicaVoxel</h2><br>
+    <p style="text-align: justify; margin: 5px;">
+      This assessment requires me to build a pyramid hologram using a clear/transparent sheet, build a 3D model/character 
+      using MagicaVoxel, animate them using Mixamo and finally generate a display for hologram using Unity. In the demo video, 
+      the first part shows the live demo of how the model would look like once projected on the hologram pyramid. 
+      A boy in white 'Baju Melayu' is dancing to a song called 'Sesuci Lebaran'. In the second part of the video, anyone can try to
+      display the boy by placing a pyramid hologram on top of the device screen.
+      <br><br>
+      <iframe width="100%" height="500" src="https://www.youtube.com/embed/21hmK4Idkw4?si=61WxMiOiSwpM4qik" 
+      frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </p>
+    <br>
+  </div>
+
+  <!-- WebVR -->
+  <div class="container" id="AR">
+    <h2 class="fw-light" style="text-align: center; margin-top: 50px;">Marker-based AR Vuforia</h2><br>
+    <p style="text-align: justify; margin: 5px;">
+      This assessment requires me to display animated 3D objects on top of 5 different markers using Vuforia and Unity. 
+      Then, the animations would change once the markers collide with each other.
+      <br><br>
+      <iframe width="100%" height="500px" src="https://www.youtube.com/embed/DVVf6gTkmL4?si=fOotBUCqnWT_j1Pv" 
+      title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </p>
+    <br>
+  </div>
+
+
+    <div id="footer-container"></div>
+
+    <div class="loader-wrapper">
+      <div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="shade"></div>
+        <div class="shade"></div>
+        <div class="shade"></div>
+        <span>Loading</span>
+      </div>
+    </div> 
+        
+    <!-- Load Header -->
+    <script>
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+        });
+    </script>
+
+    <!-- Load Footer -->
+    <script>
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer-container').innerHTML = data;
+        });
+    </script>
+</body>
+</html>

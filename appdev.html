@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Application</title>  
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  
+  <link rel="stylesheet" href="./style.css">
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Loader Screen -->
+  <script>
+    $(window).on("load", function(){
+      console.log("Window loaded");
+      $(".loader-wrapper").fadeOut("slow", function() {
+        console.log("Loader hidden");
+      });
+    });
+  </script>
+
+</head>
+<body>
+    <div id="header-container"></div>
+    
+    <!-- Full Page Image Header with Vertically Centered Content -->
+    <header class="masthead" style="background-image: url(./asset/Happdev.png);">
+      <div class="container h-50">
+        <div class="row h-50 align-items-center">
+          <div class="col-12 text-center">
+            <h1 class="fw-light">「Application Development: KTDI MART」</h1>
+            <p class="lead">
+              An application developed by Servify, for KTDI Mart's seller and customers, built using Android Studio and Java.<br><br>
+            </p>
+            <a class="btn btn-white" href="https://www.figma.com/proto/ZBticRCHuE4FAdxzlPRQea/Servify-KTDI-Mart-Prototype?node-id=0-1&t=RoXRDuFk5HTz8gyw-1"><i class="fas fa-link" style="padding-right: 15px;"></i>Live Prototype</a>
+            <div style="text-align: center; margin:20px;">
+              <img src="./asset/ktdimart.png" id="circle">
+            </div>  
+          </div>
+        </div>
+      </div>
+    </header>
+
+   <!-- About Project -->
+   <div class="container">
+    <h2 class="fw-light" style="text-align: center; margin-top: 90px;">About Project</h2>
+    <div class="container" style="text-align: center;">
+      <iframe width="100%" height="500px" src="https://www.youtube.com/embed/-3RwtRjbJY8?si=fGCLZXXojnzgSImu" 
+          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+      </iframe>
+    </div>
+    <p style="text-align: justify; margin: 5px;">
+      KTDI Mart, a mobile application developed by Servify, focusing on providing a convenient platform for customers of 
+      KTDI Mart to access information about the mart's availability and products, as well as to make product requests directly 
+      to the mart's owner from their smartphones. It is a project for Application Development subject. Below are the tools and 
+      technologies used:
+      <br><br>
+      🎐 Android Studio. (Java) <br>
+      🎐 Google Firebase. <br>
+      🎐 GitHub. <br>
+      🎐 Figma. <br>
+      🎐 Adobe Illustrator. <br>
+      🎐 Jira + Clockify. <br><br><br>
+      
+      <b>[ My Roles ] </b>
+      <div id="bContainer" style="margin: 30px; padding:0;">
+        <img src="./asset/app-proto.jpg" height="100%">
+      </div>
+      <div id="bContainer" style="margin: 30px; padding:0;">
+        <img src="./asset/app-role.png" height="100%">
+      </div>
+    </p>
+  </div>
+
+    <div id="footer-container"></div>
+
+    <div class="loader-wrapper">
+      <div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="shade"></div>
+        <div class="shade"></div>
+        <div class="shade"></div>
+        <span>Loading</span>
+      </div>
+    </div> 
+        
+    <!-- Load Header -->
+    <script>
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+        });
+    </script>
+
+    <!-- Load Footer -->
+    <script>
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer-container').innerHTML = data;
+        });
+    </script>
+</body>
+</html>

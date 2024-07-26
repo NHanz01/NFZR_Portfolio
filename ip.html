@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Processing</title>  
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  
+  <link rel="stylesheet" href="./style.css">
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Loader Screen -->
+  <script>
+    $(window).on("load", function(){
+      console.log("Window loaded");
+      $(".loader-wrapper").fadeOut("slow", function() {
+        console.log("Loader hidden");
+      });
+    });
+  </script>
+    
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <!-- Full Page Image Header with Vertically Centered Content -->
+    <header class="masthead" style="background-image: url(./asset/Hip.png);">
+      <div class="container h-50">
+        <div class="row h-50 align-items-center">
+          <div class="col-12 text-center">
+            <h1 class="fw-light">「Image Processing: OpenCV + Python」</h1>
+            <p class="lead">
+              Various samples of image processing done using Python and OpenCV, throughout my university assignments.
+              <br><br>
+              <a class="btn btn-white" href="#thresholding" style="margin-right: 10px;"><i class="fa fa-camera-retro" style="padding-right: 15px;"></i>Image Thresholding</a>
+              <a class="btn btn-white" href="#manipulation" style="margin-right: 10px;"><i class="fa fa-camera-retro" style="padding-right: 15px;"></i>Image Manipulation</a>
+              <br><br>
+              <a class="btn btn-white" href="#laplacian" style="margin-right: 10px;"><i class="fa fa-camera-retro" style="padding-right: 15px;"></i>Laplacian Filter</a>
+              <a class="btn btn-white" href="#masking" style="margin-right: 10px;"><i class="fa fa-camera-retro" style="padding-right: 15px;"></i>Unsharp Masking</a>
+              <a class="btn btn-white" href="#segmentation" style="margin-right: 10px;"><i class="fa fa-camera-retro" style="padding-right: 15px;"></i>Image Segmentation</a>
+            </p>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </header>
+
+   <!-- About Project -->
+   <div class="container">
+    <h2 class="fw-light" style="text-align: center; margin-top: 50px;">About</h2><br>
+    <h6 style="text-align: center; margin: 5px;">
+      These are the various samples of image processing I've done using Python and OpenCV for my university assignments.
+      <br><br>
+    <h6>
+
+    <div id="thresholding">
+      <div id="bContainer" style="margin: 30px; padding:0;">
+        <img src="./asset/ip-thresh.png" height="70%">
+      </div>
+      <p style="text-align: center;">
+        <b>✨Image Thresholding</b> by extracting the signature from different images with uneven lighting conditions. <br>
+      </p>  
+    </div>
+    
+    <div id="manipulation">
+      <div id="bContainer" style="margin: 30px; padding:0;">
+        <img src="./asset/ip-manipulation.png" height="70%">
+      </div>
+      <p style="text-align: center;">
+        <b>✨Image Manipulation</b> by darkening, brightening, and blacken the region of interest of an image. <br>
+      </p>  
+    </div>
+    
+    <div id="laplacian">
+      <div id="bContainer" style="margin: 30px; padding:0;">
+        <img src="./asset/ip-laplacian.png" height="70%">
+      </div>
+      <p style="text-align: center;">
+        <b>✨Laplacian Filter</b> to detect the edges of an image. <br>
+      </p>  
+    </div>
+
+    <div id="masking">
+      <div id="bContainer" style="margin: 30px; padding:0;">
+        <img src="./asset/ip-masking.png" height="70%">
+      </div>
+      <p style="text-align: center;">
+        <b>✨Unsharp Masking</b> by performing blurring, subtraction, and addition, to sharpen an image. <br>
+      </p>  
+    </div>
+
+    <div id="segmentation">
+      <div id="bContainer" style="margin: 30px; padding:0;">
+        <img src="./asset/ip-segment.png" height="70%">
+      </div>
+      <p style="text-align: center;">
+        <b>✨Image Segmentation</b> by using adaptive thresholding methods to reduce noise and highlight features. <br>
+      </p>  
+    </div>
+  </div>
+
+    <div id="footer-container"></div>
+
+    <div class="loader-wrapper">
+      <div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="shade"></div>
+        <div class="shade"></div>
+        <div class="shade"></div>
+        <span>Loading</span>
+      </div>
+    </div> 
+
+    <!-- Load Header -->
+    <script>
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+        });
+    </script>
+
+    <!-- Load Footer -->
+    <script>
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer-container').innerHTML = data;
+        });
+    </script>
+</body>
+</html>
