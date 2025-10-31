@@ -75,12 +75,17 @@ body{
   color: #f8f6f4;
   text-align: justify;
   min-height: 475px;
-  background-image: url("./asset/mastH.jpg");
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("./asset/mastH.jpg");
+  background-color: black;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
+.logo:hover, .navbar-brand:hover, .nav-item1:hover {
+  transform: scale(1.08);
+  transition: transform 0.3s ease;
+}
 
 /* LOADER ANIMATION */
 
