@@ -7,6 +7,8 @@
   <!-- CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  
   <link rel="stylesheet" href="./style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -38,8 +40,9 @@
               <br> (Hons.) from Universiti Teknologi Malaysia (UTM), Johor. <br><br>
               <b>~ Welcome to My Portfolio ~</b>
             </p>
-            <div style="text-align: center;">
-              <img src="./asset/me.jpg" id="circle">
+            <div class="dp-wrapper" style="text-align: center;">
+              <img src="./asset/me.jpg" class="dp front">
+              <img src="./asset/me2.jpg" class="dp back">
             </div> 
           </div>
         </div>
@@ -52,12 +55,128 @@
       </div>
     </div>
 
-    <!-- Projects -->
-    <div style="background-image: url(./asset/sky1.jpg);">
-      <div class="container">
-        <h2 style="margin: 20px; color: #f8f8f8;"><br><br>[ Past Projects ]</h2>
+    <!-- CAROUSEL-->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+      </div>
 
-        <div class=row id="bContainer">
+
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <a href="./dice3.html"> <img src="./asset/CDice.jpg" class="d-block w-100" alt="..."> </a>
+          <div class="carousel-caption d-none d-md-block" href="./dice3.html">
+            <h5>DICE 3.0 Competition</h5>
+            <p>Won the gold medal and special award through our project, EscapePal.</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <a href="./dice3.html"> <img src="./asset/CEscape.jpg" class="d-block w-100" alt="..."> </a>
+        </div>
+
+        <div class="carousel-item">
+          <a href="./hatelier.html"> <img src="./asset/hatelier.jpg" class="d-block w-100" alt="..."> </a>
+          <div class="carousel-caption d-none d-md-block" href="./dice3.html">
+            <h5>HAtelier</h5>
+            <p>Interactive Real-Time 3D Drawing Guide Using Hand Gestures In WebAR.</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <iframe width="100%" height="100%"
+              src="https://www.youtube.com/embed/GFGS3e2hyjM?si=WTCn8_e3bvXCn51_"
+              title="YouTube video"
+              allowfullscreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          ></iframe>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Keris Warrior</h5>
+            <p>What if we localise the classic Space Invaders? </p>
+          </div>
+        </div>        
+
+        <div class="carousel-item">
+          <a href="./appdev.html"> <img src="./asset/CServify.jpg" class="d-block w-100" alt="..."> </a>
+        </div>
+
+        <div class="carousel-item">
+          <a href="./diploma.html"> <img src="./asset/CDiploma.png" class="d-block w-100" alt="..."> </a>
+        </div>
+
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+  </div>
+
+    <!-- Projects -->
+    <div class="mainBg">
+      <div class="container">
+        <h2 style="color: #f8f8f8;"><br><br>[ Past Projects ]</h2>
+
+        <div class="row bContainer" data-aos="fade-down-left" data-aos-duration="1000">
+          <div class="col-md-6">
+            <img src="./asset/index-escape.png">
+          </div>
+          <div class="col-md-6">
+            <h2>EscapePal (DICE 3.0)</h2>
+            <p>
+              An award-winning "VR Training Experience For Escaping A Sinking Car With An Artificial Intelligence Companion" project built for the 
+              DICE 3.0 (Digital Innovation & Creativity Exhibition) competition hosted by MOHE and UniSZa.
+              <br><br>
+              EscapePal is designed to enhance water safety preparedness by simulating real-life emergency situations where vehicles become submerged. 
+            </p>
+            <a class="btn btn-primary" href="./dice3.html">More Details<i class="fa fa-arrow-right" style="padding-left: 15px;"></i></a>
+          </div>
+        </div>
+
+        <div class="row bContainer" data-aos="fade-down-right" data-aos-duration="1000">
+          <div class="col-md-6">
+            <h2>HAtelier </h2>
+            <p>
+              HAtelier is an interactive real-time 3D drawing guide using hand gestures in WebAR, built to redefine how people interact, 
+              learn, and create in augmented reality. The idea began with a simple question: what if we could draw in the air, in real time, 
+              using just our hands and a web browser?
+              <br><br>
+              That question became the foundation for HAtelier — a platform where users can experience gesture-based drawing directly through 
+              their phone’s camera, without needing to install any app. Just open it in your browser, and the world becomes your canvas. 
+            </p>
+            <a class="btn btn-primary" href="./hatelier.html">More Details<i class="fa fa-arrow-right" style="padding-left: 15px;"></i></a>
+          </div>
+          <div class="col-md-6">
+            <img src="./asset/index-hatelier.jpg">
+          </div>
+        </div>
+
+        <div class="row bContainer" data-aos="fade-down-left" data-aos-duration="1000">
+          <div class="col-md-6">
+            <img src="./asset/index-keris.png">
+          </div>
+          <div class="col-md-6">
+            <h2>Keris Warrior</h2>
+            <p>
+              A fast-paced action game inspired by the timeless classic Space Invaders, reimagined through the lens of Malaysian 
+              culture and heroism. Built with Unity, Keris Warrior blends modern arcade combat with traditional elements, inviting players 
+              to defend their homeland using the mystical power of the keris, an ancestral weapon symbolic of bravery and identity.
+            </p>
+            <a class="btn btn-primary" href="./game.html">More Details<i class="fa fa-arrow-right" style="padding-left: 15px;"></i></a>
+          </div>
+        </div>
+
+        <div class="row bContainer" data-aos="fade-down-right" data-aos-duration="1000">
           <div class="col-md-6">
             <h2>KTDI Mart</h2>
             <p>
@@ -73,7 +192,7 @@
           </div>
         </div>
 
-        <div class=row id="bContainer">
+        <div class="row bContainer" data-aos="fade-down-left" data-aos-duration="1000">
           <div class="col-md-6">
             <img src="./asset/index-vuforia.png">
           </div>
@@ -92,7 +211,7 @@
           </div>
         </div>
 
-        <div class=row id="bContainer">
+        <div class="row bContainer" data-aos="fade-down-right"  data-aos-duration="1000">
           <div class="col-md-6">
             <h2>Image Processing</h2>
             <p>
@@ -113,22 +232,26 @@
           </div>
         </div>
 
-        <div class=row id="bContainer">
+        <div class="row bContainer" data-aos="fade-down-left"  data-aos-duration="1000">
           <div class="col-md-6">
             <img src="./asset/index-spatial.png">
           </div>
           <div class="col-md-6">
-            <h2>Game Design</h2>
+            <h2>Game Development</h2>
             <p>
               <ul>
                 <li>
-                  <b>Not Expedia (Spatial.io + Unity):<br></b>
-                  A simple third-person game developed during RTCG subject
-                  to demonstrates multiplayer function.
+                  <b>Keris Warrior (Unity): <br></b>
+                  A localization of the classic Space Invaders game.
                 </li>
                 <li>
                   <b>Nazomeita (Scratch): <br></b>
                   A visual novel game packed with different mini games as player play along the story.
+                </li>
+                <li>
+                  <b>Not Expedia (Spatial.io + Unity):<br></b>
+                  A simple third-person game developed during RTCG subject
+                  to demonstrates multiplayer function.
                 </li>
               </ul>              
             </p>
@@ -136,7 +259,7 @@
           </div>
         </div>
 
-        <div class=row id="bContainer">
+        <div class="row bContainer" data-aos="fade-down-right"  data-aos-duration="1000">
           <div class="col-md-6">
             <h2>AnimeXhibition</h2>
             <p>
@@ -150,7 +273,7 @@
           </div>
         </div>
 
-        <div class=row id="bContainer">
+        <div class="row bContainer" data-aos="fade-down-left"  data-aos-duration="1000">
           <div class="col-md-6">
             <img src="./asset/index-diploma.png">
           </div>
@@ -201,5 +324,15 @@
           document.getElementById('footer-container').innerHTML = data;
         });
     </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+    </script>
+
 </body>
 </html>

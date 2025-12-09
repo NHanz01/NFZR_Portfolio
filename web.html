@@ -7,6 +7,8 @@
   <!-- CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  
   <link rel="stylesheet" href="./style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -79,7 +81,7 @@
         <li>
             <b>Landing Page/Homepage:</b>
             <br><br>
-            <div id="bContainer" style="margin: 0; padding:0;">
+            <div class="row bContainer" data-aos="flip-left" data-aos-duration="1000" style="margin: 0; padding:0;">
               <img src="./asset/web-home.png" height="100%">
             </div>     
             <br>
@@ -93,7 +95,7 @@
         <li>
             <b>Anime Character Page:</b>
             <br><br>
-            <div id="bContainer" style="margin: 0; padding:0;">
+            <div class="row bContainer" data-aos="flip-right" data-aos-duration="1000" style="margin: 0; padding:0;">
               <img src="./asset/web-char.jpeg" height="100%">
             </div> 
             <br>
@@ -138,5 +140,11 @@
           document.getElementById('footer-container').innerHTML = data;
         });
     </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    
 </body>
 </html>
