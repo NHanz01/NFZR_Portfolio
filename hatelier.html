@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HAtelier</title>  
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+
+  <!-- Loader Screen -->
+  <script>
+    $(window).on("load", function(){
+      console.log("Window loaded");
+      $(".loader-wrapper").fadeOut("slow", function() {
+        console.log("Loader hidden");
+      });
+    });
+  </script>
+
+</head>
+<body>
+    <div id="header-container"></div>
+    
+    <!-- Full Page Image Header with Vertically Centered Content -->
+    <header class="masthead" style="background-image: url(./asset/Hhatelier.png);">
+      <div class="container h-50">
+        <div class="row h-50 align-items-center">
+          <div class="col-12 text-center">
+            <h1 class="fw-light">「 HAtelier 」</h1>
+            <p class="lead">
+              Interactive Real-Time 3D Drawing Guide Using Hand Gestures In WebAR. <br>
+              It serves as my Final Year Project (FYP), also known as Projek Sarjana Muda (PSM), for my degree.<br>
+            </p>
+            <a class="btn btn-white" href="https://nhanz01.github.io/HAtelier/"><i class="fas fa-link" style="padding-right: 15px;"></i>Live Demo</a>
+            <div style="text-align: center; margin-top:20px;">
+            <div class="dp-wrapper" style="text-align: center;">
+              <img src="./asset/HatelierPic.jpg" id="circle">
+            </div>  
+          </div>
+        </div>
+      </div>
+    </header>
+
+   <!-- About Project -->
+   <div class="container">
+        <h2 class="fw-light" style="text-align: center; margin-top: 90px;">About Project</h2>
+        <div class="responsive-iframe-wrapper">
+          <iframe src="https://www.youtube.com/embed/XHGJHh1T1kQ?si=1gS9wWKLynvP42et" allowfullscreen></iframe>
+        </div>
+        <p style="text-align: justify; margin: 5px;">
+            <br>
+            Introducing <b>HAtelier</b>, a project I’ve been passionately developing since 2024 as part of my Final Year Project (Projek Sarjana Muda) at Universiti Teknologi Malaysia (UTM). 
+            HAtelier is an interactive real-time 3D drawing guide using hand gestures in WebAR, built to redefine how people interact, learn, and create in augmented reality. 
+            <br><br>
+            The idea began with a simple question: what if we could draw in the air, in real time, using just our hands and a web browser? 
+            That question became the foundation for HAtelier, a platform where users can experience gesture-based drawing directly through their phone’s camera, 
+            without needing to install any app. Just open it in your browser, and the world becomes your canvas. 💫
+            <br><br>
+            <b>[ Two Modes to Explore ]</b>
+            <li><b>🎨 Free Mode:</b> Dive in and draw anything you imagine. Experiment, play, and express yourself freely in AR space. </li>
+            <li><b>📘 Tutorial Mode:</b> Follow guided 3D drawing tasks across three levels of difficulty, featuring nine unique shapes that challenge both precision and creativity. </li>
+            <br>
+            Behind the scene, HAtelier is powered by <a href="https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker">MediaPipe</a>, 
+            <a href="https://github.com/AR-js-org"> AR.js</a>, <a href="https://aframe.io/"> A-Frame</a>,
+            working together to combine hand tracking and WebAR for a seamless, web-based AR experience. Currently, it performs best on <b>mobile devices</b>, 
+            which utilize the gyroscope and accelerometer for motion detection and stability.
+            <br><br>
+        </p>
+        <div class="photo-gallery">
+            <div class="container">
+                <div class="intro">
+                    <h2 class="text-center">HAtelier Gallery</h2>
+                </div>
+                <div class="row photos">
+                    <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="./hatelier/1.jpg" data-lightbox="photos"><img class="img-fluid" loading="lazy" src="./hatelier/1.jpg"></a></div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="./hatelier/2.jpg" data-lightbox="photos"><img class="img-fluid" loading="lazy" src="./hatelier/2.jpg"></a></div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="./hatelier/3.jpg" data-lightbox="photos"><img class="img-fluid" loading="lazy" src="./hatelier/3.jpg"></a></div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="./hatelier/4.jpg" data-lightbox="photos"><img class="img-fluid" loading="lazy" src="./hatelier/4.jpg"></a></div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="./hatelier/5.jpg" data-lightbox="photos"><img class="img-fluid" loading="lazy" src="./hatelier/5.jpg"></a></div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="./hatelier/6.jpg" data-lightbox="photos"><img class="img-fluid" loading="lazy" src="./hatelier/6.jpg"></a></div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="./hatelier/7.jpg" data-lightbox="photos"><img class="img-fluid" loading="lazy" src="./hatelier/7.jpg"></a></div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="./hatelier/8.jpg" data-lightbox="photos"><img class="img-fluid" loading="lazy" src="./hatelier/8.jpg"></a></div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="./hatelier/9.jpg" data-lightbox="photos"><img class="img-fluid" loading="lazy" src="./hatelier/9.jpg"></a></div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="./hatelier/10.jpg" data-lightbox="photos"><img class="img-fluid" loading="lazy" src="./hatelier/10.jpg"></a></div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="./hatelier/11.jpg" data-lightbox="photos"><img class="img-fluid" loading="lazy" src="./hatelier/11.jpg"></a></div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="./hatelier/12.jpg" data-lightbox="photos"><img class="img-fluid" loading="lazy" src="./hatelier/12.jpg"></a></div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="./hatelier/13.jpg" data-lightbox="photos"><img class="img-fluid" loading="lazy" src="./hatelier/13.jpg"></a></div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+    </div>
+
+    <div id="footer-container"></div>
+
+    <div class="loader-wrapper">
+      <div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="shade"></div>
+        <div class="shade"></div>
+        <div class="shade"></div>
+        <span>Loading</span>
+      </div>
+    </div> 
+
+    <!-- LIGHTBOX SCRIPT -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+        
+    <!-- Load Header -->
+    <script>
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+        });
+    </script>
+
+    <!-- Load Footer -->
+    <script>
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer-container').innerHTML = data;
+        });
+    </script>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+</body>
+</html>
