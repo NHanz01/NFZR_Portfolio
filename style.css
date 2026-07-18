@@ -1,21 +1,101 @@
+/* ============================
+   BASE / RESET
+   ============================ */
+html {
+  overflow-x: hidden;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 body{
     font-family: Poppins;
     background-color: #f8f6f4;
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
     margin-top: 20px;
-    padding-bottom: 80px;
-  }
-#navbar{
-    height: 80px;
+    padding-bottom: 110px; /* extra room so fixed footer never overlaps content */
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ============================
+   HEADER / NAVBAR
+   ============================ */
+#navbar{
+    min-height: 80px;
+    height: auto;
+}
+#navbar .navbar-brand {
+  font-size: 1.1rem;
+  white-space: normal;
+}
+#navbar .container {
+  flex-wrap: wrap;
+}
+
 .navbar.fixed-bottom {
     box-shadow: 0 15px 10px 0 rgba(0, 0, 0, 0.8);
 }
 #highlighted {
     opacity: 0.7;
 }
+
+@media (max-width: 576px) {
+  #navbar .navbar-brand {
+    font-size: 0.95rem;
+  }
+}
+
+/* ============================
+   FOOTER
+   ============================ */
+.navbar.fixed-bottom .container {
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.navbar.fixed-bottom .navbar-brand {
+  font-size: 1rem;
+  white-space: normal;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.navbar.fixed-bottom .navbar-nav {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  flex: 0 0 auto;
+}
+.navbar.fixed-bottom .nav-item1 {
+  margin-left: 12px;
+}
+
+@media (max-width: 480px) {
+  .navbar.fixed-bottom .navbar-brand {
+    font-size: 0.7rem;
+    white-space: nowrap;
+  }
+  .navbar.fixed-bottom img {
+    height: 28px !important;
+  }
+  .navbar.fixed-bottom .fa-arrow-circle-up {
+    font-size: 28px !important;
+  }
+  .navbar.fixed-bottom .nav-item1 {
+    margin-left: 8px;
+  }
+}
+
+/* ============================
+   BUTTONS
+   ============================ */
 .btn{
     color: #0c0c0c;
     border-radius: 30px;
@@ -47,9 +127,16 @@ body{
     transition: transform 0.3s ease-in-out;
 }
 
+/* ============================
+   PROFILE / CIRCLE IMAGES
+   ============================ */
 #circle
 {
+    width: 150px;
     height: 150px;
+    max-width: 40vw;
+    max-height: 40vw;
+    object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 5px 20px 0 rgba(12, 12, 12, 0.5);
 }
@@ -58,6 +145,9 @@ body{
   perspective: 1000px;
   width: 150px;
   height: 150px;
+  max-width: 40vw;
+  max-height: 40vw;
+  margin-bottom: -75px;
   position: relative;
   display: inline-block;
 }
@@ -82,6 +172,9 @@ body{
 .dp-wrapper:hover .back { transform: rotateY(0deg); }
 
 
+/* ============================
+   CONTENT CONTAINERS
+   ============================ */
 .bContainer{
     margin: 50px;
     padding:50px;
@@ -99,9 +192,53 @@ body{
 .iframe{
     width: 100%;
 }
+
+@media (max-width: 768px) {
+  .bContainer {
+    margin: 20px 15px;
+    padding: 20px;
+  }
+}
+
+/* ============================
+   RESPONSIVE IFRAMES (16:9)
+   Wrap iframes in <div class="responsive-iframe-wrapper">
+   instead of using fixed width/height attributes.
+   ============================ */
+   
+.responsive-iframe-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.responsive-iframe-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Taller embeds (e.g. PDF viewers, Spatial.io) that need more vertical room */
+.responsive-iframe-wrapper.tall {
+  padding-top: 100%;
+}
+@media (min-width: 768px) {
+  .responsive-iframe-wrapper.tall {
+    padding-top: 75%;
+  }
+}
+
+/* ============================
+   MASTHEAD / HEADER BANNERS
+   ============================ */
 .masthead {
   padding-top: 200px;
-  height: 300px;
+  height: auto;
   color: #f8f6f4;
   text-align: justify;
   min-height: 475px;
@@ -112,9 +249,48 @@ body{
   background-repeat: no-repeat;
 }
 
+@media (max-width: 768px) {
+  .masthead {
+    padding-top: 130px;
+    min-height: 300px;
+    text-align: center;
+  }
+  .masthead .lead {
+    font-size: 1rem;
+  }
+  .masthead h1 {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 480px) {
+  .masthead {
+    padding-top: 110px;
+    min-height: 360px;
+  }
+  .masthead h1 {
+    font-size: 1.3rem;
+  }
+  .masthead .btn, .masthead .btn-white {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+}
+
 .logo:hover, .navbar-brand:hover, .nav-item1:hover {
   transform: scale(1.08);
   transition: transform 0.3s ease;
+}
+
+/* Partner/sponsor logo lists: shrink and wrap instead of fixed px widths */
+.logo {
+  width: 100%;
+  height: auto;
+  max-width: 220px;
+}
+@media (max-width: 576px) {
+  .logo {
+    max-width: 130px;
+  }
 }
 
 .mainBg {
@@ -122,20 +298,48 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* <--- makes it stay in place while content scrolls */
-  min-height: 100vh; /* make sure it has some height */
+  background-attachment: fixed; /* stays in place while content scrolls */
+  min-height: 100vh;
+}
+@media (max-width: 768px) {
+  /* background-attachment: fixed is heavy/buggy on mobile browsers */
+  .mainBg {
+    background-attachment: scroll;
+  }
 }
 
-/* Make carousel fit full width */
+/* ============================
+   CAROUSEL
+   ============================ */
 .carousel,
 .carousel-inner,
 .carousel-item,
 .carousel-item img {
-  width: 100%; /* full width */
-  height: 600px;
-  object-fit: cover; /* crop nicely without stretching */
-  object-position: center;
+  width: 100%;
+  height: 300vh;
+  max-height: 600px;
+  object-fit: cover;
+  object-position: center center;
   background-color: #0c0c0c;
+}
+.carousel-item iframe {
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 768px) {
+  .carousel,
+  .carousel-inner,
+  .carousel-item,
+  .carousel-item img {
+    height: 40vh;
+    min-height: 220px;
+  }
+  .carousel-caption h5 {
+    font-size: 1rem;
+  }
+  .carousel-caption p {
+    font-size: 0.8rem;
+  }
 }
 
 
@@ -239,12 +443,22 @@ body{
     color: aquamarine;
     left:15%;
 }
+@media (max-width: 480px) {
+  .loader {
+    width: 160px;
+  }
+  .loader span {
+    font-size: 16px;
+    letter-spacing: 8px;
+  }
+}
  
 /* PHOTO GALLERY: LIGHTBOX */
 
 .photo-gallery {
   color:#313437;
   background-color:#fff;
+  overflow-x: hidden;
 }
 
 .photo-gallery p {
@@ -270,6 +484,7 @@ body{
   font-size:16px;
   max-width:500px;
   margin:0 auto 40px;
+  padding: 0 15px;
 }
 
 .photo-gallery .intro p {
@@ -291,4 +506,60 @@ body{
   border-radius: 5px;
 }
 
+@media (max-width: 480px) {
+  .photo-gallery .item img {
+    height: 150px;
+  }
+}
 
+/* ============================
+   PARTNER LOGO STRIP
+   ============================ */
+
+.logo-strip {
+  width: 100%;
+  text-align: center;
+}
+
+.logo-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  padding: 15px 10px;
+  margin: 0;
+  gap: clamp(15px, 3vw, 40px);
+}
+
+.logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(90px, 10vw, 140px);
+}
+
+.logo-item .logo {
+  height: 100%;
+  width: auto;
+  max-width: clamp(120px, 18vw, 220px);
+  object-fit: contain;
+}
+
+
+/* Mobile */
+@media (max-width: 576px) {
+
+  .logo-list {
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .logo-item {
+    height: 55px;
+  }
+
+  .logo-item .logo {
+    max-width: 130px;
+  }
+}
