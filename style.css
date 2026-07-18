@@ -563,3 +563,17 @@ img {
     max-width: 130px;
   }
 }
+
+.pdf-container {
+    width: 90%;
+    height: 80vh;
+    margin: 100px auto 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.pdf-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
